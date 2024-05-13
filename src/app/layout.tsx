@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <title>Bottleware.</title>
       <body className={roboto.className}>
-        <Navbar isLogin={true}/>
+        <Navbar />
         {children}
         <Footer />
         </body>

@@ -5,7 +5,7 @@ import Link from 'next/link';
 import CustomButton from './CustomButton';
 import { useRouter } from 'next/navigation'
 
-const Navbar: React.FC = ({isLogin, id}: any) => {
+const Navbar: React.FC = ({id}: any) => {
   const router = useRouter()
   const [isOpen, setIsOpen] = useState(false);
   const [isLoggIn, setIsLoggIn] = useState<boolean>(false);
@@ -60,9 +60,6 @@ const Navbar: React.FC = ({isLogin, id}: any) => {
     
   }
 
-  if (!isLogin) {
-    return null
-  }
   
   return (
     <nav className="h4-4 p-6">
