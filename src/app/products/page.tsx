@@ -1,10 +1,17 @@
-"use client"
+"use client";
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
+type Product = {
+    id: string;
+    name: string;
+    price: string;
+    img: string;
+};
+
 const Products = () => {
-    const [data, setData] = useState([]);
+    const [data, setData] = useState<Product[]>([]);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -13,7 +20,7 @@ const Products = () => {
                 if (!response.ok) {
                     throw new Error(`Network response was not ok: ${response.statusText}`);
                 }
-                const responseData = await response.json();
+                const responseData: Product[] = await response.json();
                 setData(responseData);
             } catch (error) {
                 console.error('Error fetching data:', error);
