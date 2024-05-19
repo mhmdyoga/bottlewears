@@ -4,8 +4,8 @@ import Link from 'next/link';
 import React from 'react'
 
 const Products = async() => {
-   const response = await axios.get('http://localhost:8080/crockicle')
-  const data = response.data;
+   const response = await fetch('http://localhost:8080/crockicle')
+  const data = await response.json();
   return (
     <div>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-5">
